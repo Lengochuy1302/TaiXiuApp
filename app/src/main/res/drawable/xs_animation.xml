@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false"
+    >
+
+
+    <item
+        android:drawable = "@drawable/mot"
+        android:duration = "100"
+        />
+    <item
+        android:drawable = "@drawable/hai"
+        android:duration = "100"
+        />
+    <item
+        android:drawable = "@drawable/ba"
+        android:duration = "100"
+        />
+    <item
+        android:drawable = "@drawable/bon"
+        android:duration = "100"
+        />
+    <item
+        android:drawable = "@drawable/nam"
+        android:duration = "100"
+        />
+    <item
+        android:drawable = "@drawable/sau"
+        android:duration = "100"
+        />
+
+
+</animation-list>

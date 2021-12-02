@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "507115617772",
+    "firebase_url": "https://neww-4761a-default-rtdb.firebaseio.com",
+    "project_id": "neww-4761a",
+    "storage_bucket": "neww-4761a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507115617772:android:bf522fa0f7e35d04e4d4c9",
+        "android_client_info": {
+          "package_name": "com.example.newww"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507115617772-fs1hhmr9l823fatv3iel8q11thgqnvc3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newww",
+            "certificate_hash": "9ea87b5dbb825e64849568362b09481ce2f40d6f"
+          }
+        },
+        {
+          "client_id": "507115617772-uc88ghj36o7h3n14hd64ikv14bjqqg80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKEb1lLtowWEjrdPSFz6Elyz3WZgYCh40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507115617772-uc88ghj36o7h3n14hd64ikv14bjqqg80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

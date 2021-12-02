@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700"
+    android:fillViewport="true"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/bangers"
+                android:gravity="center"
+                android:text="TRÌNH ĐỘ không bằng TRỜI ĐỘ"
+                android:textColor="#3DE844"
+                android:textSize="25sp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/baloo"
+                android:text="500.000VND"
+                android:textColor="#F1DC29"
+                android:textSize="22sp" />
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giải 8"
+                android:textColor="#FF0707"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/kqgiai8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả giải 8"
+                android:textColor="#FF0707"
+                android:textSize="20sp"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/giai7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="Giải 7"
+
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/kqgiai7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả giải 7"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/giai6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/giai7"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:text="Giải 6" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/kqgiai6cham1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 6.1" />
+
+                <TextView
+                    android:id="@+id/kqgiai6cham2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 6.2" />
+                <TextView
+                    android:id="@+id/kqgiai6cham3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 6.3" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/giai5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai6">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:textSize="15sp"
+                android:text="Giải 5" />
+            <TextView
+                android:id="@+id/kqgiai5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả giải 5"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/giai4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Giải 4"
+                android:textSize="15sp"
+                android:gravity="center"/>
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="Kết quả giải 4" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/kqgiai4cham1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.1" />
+
+                <TextView
+                    android:id="@+id/kqgiai4cham2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.2" />
+                <TextView
+                    android:id="@+id/kqgiai4cham3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.3" />
+                <TextView
+                    android:id="@+id/kqgiai4cham4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.4" />
+                <TextView
+                    android:id="@+id/kqgiai4cham5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.5" />
+                <TextView
+                    android:id="@+id/kqgiai4cham6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+
+                    android:text="Kết quả giải 4.6" />
+                <TextView
+                    android:id="@+id/kqgiai4cham7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 4.7" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+
+            android:id="@+id/giai3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai4"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Giải 3"
+                android:textSize="15sp" />
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Kết quả giải 3"-->
+            <!--                android:gravity="center"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/kqgiai3cham1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 3.1" />
+
+                <TextView
+                    android:id="@+id/kqgiai3cham2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="Kết quả giải 3.2" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/giai2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai3">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:textSize="15sp"
+                android:text="Giải 2" />
+            <TextView
+                android:id="@+id/kqgiai2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả giải 2"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/giai1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:textSize="15sp"
+
+                android:text="Giải 1" />
+            <TextView
+                android:id="@+id/kqgiai1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả giải 1"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/txtgiaidb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/giai1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF0404"
+                android:textSize="15sp"
+                android:text="Giải Đ.B" />
+
+            <TextView
+                android:id="@+id/kqgiaidb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="11.5dp"
+                android:gravity="center"
+                android:text="Kết quả giải đặc biệt"
+                android:textColor="#FF0707"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/purple_700"
+               >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_700">
+
+                    <TextView
+                        android:id="@+id/txt_lo2so"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Lô Đ.Biệt 2 số"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_nhapso"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/txt_lo2so"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:hint="Ghi số cược"
+                        android:inputType="number"
+
+                        />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="175dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@color/purple_700"
+               >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_700">
+
+                    <TextView
+                        android:id="@+id/txt_lodb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Tiền cược/1lô"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/edt_tiencuoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@+id/txt_lodb"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:hint="tiền cược"
+                        android:inputType="number" />
+
+                    <Button
+                        android:id="@+id/btn_datcuoc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/edt_tiencuoc"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Đặt cược"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

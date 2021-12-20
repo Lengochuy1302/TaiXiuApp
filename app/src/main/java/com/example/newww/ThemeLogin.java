@@ -1,11 +1,21 @@
 package com.example.newww;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.sax.StartElementListener;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,9 +38,11 @@ import com.google.firebase.database.ValueEventListener;
 public class ThemeLogin extends AppCompatActivity {
     Button Callsignup;
     Button Callgo;
-    TextInputLayout username,password;
+    Button forgotpassword;
+    TextInputLayout username, password;
     FirebaseUser firebaseUser;
-//    ProgressDialog progressDialog;
+    ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,62 +54,136 @@ public class ThemeLogin extends AppCompatActivity {
         Callgo = findViewById(R.id.go);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-//        progressDialog = new ProgressDialog(this);
+        forgotpassword = findViewById(R.id.forgotpassword);
+        progressDialog = new ProgressDialog(this);
 
         Callsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ThemeLogin.this,Signup.class);
+                Intent i = new Intent(ThemeLogin.this, Signup.class);
                 startActivity(i);
 
             }
         });
 
 
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressDialog.setMessage("Kiểm tra Email");
+                onClickForgotPassword();
+
+
+            }
+        });
+
+
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (firebaseUser!=null){
-            Intent go = new Intent(ThemeLogin.this,Dashboard.class);
+        if (firebaseUser != null) {
+            Intent go = new Intent(ThemeLogin.this, Dashboard.class);
             startActivity(go);
             finish();
         }
 
 
     }
-//    private boolean validatePassword() {
-//        String val = password.getEditText().getText().toString();
-//        if (val.isEmpty()) {
-//            password.setError("Field cannot be empty");
-//            return false;
-//
-//        } else {
-//            password.setError(null);
-//            password.setErrorEnabled(false);
-//            return true;
-//        }
-//    }
-//
-//    private boolean validateUsername() {
-//        String val = username.getEditText().getText().toString();
-//
-//        if (val.isEmpty()) {
-//            username.setError("Field cannot be empty");
-//            return false;
-//
-//        } else {
-//            username.setError(null);
-//            username.setErrorEnabled(false);
-//            return true;
-//        }
-//    }
 
-    public  void loginuser(View view){
-        //Validate Login Info
-//        if (!validateUsername() | !validatePassword()) {
-//            return;
-//        } else {
-//            isUser();
-//        }
-        isUser();
+    private void onClickForgotPassword() {
+
+
+        View view = LayoutInflater.from(this).inflate(R.layout.diaglog_forgotpassword, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view);
+        builder.create().show();
+
+        final TextInputLayout forgotuser = view.findViewById(R.id.forgotuser);
+        final Button btn_forgotpassword = view.findViewById(R.id.btn_forgotpassword);
+
+
+        String val = forgotuser.getEditText().getText().toString();
+
+
+        btn_forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                String emailAddress = forgotuser.getEditText().getText().toString().trim();
+                String val = forgotuser.getEditText().getText().toString();
+
+
+
+                if (val.isEmpty()) {
+                    forgotuser.setError("Field cannot be empty");
+                    return;
+                }
+                progressDialog.show();
+
+                    auth.sendPasswordResetEmail(emailAddress)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(getApplication(), "Kiểm tra Email", Toast.LENGTH_SHORT).show();
+                                    return;
+
+                                }
+
+
+
+                            }
+                        });
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+    }
+    private boolean validatePassword() {
+        String val = password.getEditText().getText().toString();
+        if (val.isEmpty()) {
+            password.setError("Field cannot be empty");
+            return false;
+
+        } else {
+            password.setError(null);
+            password.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateUsername() {
+        String val = username.getEditText().getText().toString();
+
+        if (val.isEmpty()) {
+            username.setError("Field cannot be empty");
+            return false;
+
+        } else {
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    public void loginuser(View view) {
+        if (!validateUsername() | !validatePassword()) {
+            return;
+        } else {
+            isUser();
+        }
 
 
 
@@ -177,7 +263,7 @@ public class ThemeLogin extends AppCompatActivity {
 //                       progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Intent intent = new Intent(getApplicationContext(),Dashboard.class);
+                            Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                             startActivity(intent);
                             finishAffinity();
 
@@ -194,20 +280,7 @@ public class ThemeLogin extends AppCompatActivity {
 
 
 
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

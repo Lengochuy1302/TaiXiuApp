@@ -19,13 +19,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Signup extends AppCompatActivity {
     private FirebaseAuth mAuth;
     //khaibao
-    TextInputLayout reg_name,reg_username,reg_email,reg_phone,reg_password;
+    TextInputLayout reg_name, reg_username, reg_email, reg_phone, reg_password;
     Button reg_btn;
 
 //    FirebaseDatabase rootNode;
 //    DatabaseReference reference;
-
-
 
 
     @Override
@@ -189,24 +187,29 @@ public class Signup extends AppCompatActivity {
         initListener();
 
 
-
-
-
     }
 
     private void initListener() {
         reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickxacnhandangky();
+                if (!validateUsername() | !validatePassword()) {
+                    return;
+                } else {
+                    onClickxacnhandangky();
+                }
+
+
+
+
             }
         });
-
 
 
     }
 
     private void onClickxacnhandangky() {
+
         String stremail = reg_email.getEditText().getText().toString();
         String strpassword = reg_password.getEditText().getText().toString();
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -216,8 +219,8 @@ public class Signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Signup.this , Dashboard.class);
-                                 startActivity(intent);
+                            Intent intent = new Intent(Signup.this, Dashboard.class);
+                            startActivity(intent);
                             finishAffinity();
 
                         } else {
@@ -230,6 +233,33 @@ public class Signup extends AppCompatActivity {
                 });
     }
 
+    private boolean validatePassword() {
+        String val = reg_password.getEditText().getText().toString();
+        if (val.isEmpty()) {
+            reg_password.setError("Field cannot be empty");
+            return false;
 
+        } else {
+            reg_password.setError(null);
+            reg_password.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateUsername() {
+        String val = reg_email.getEditText().getText().toString();
+
+        if (val.isEmpty()) {
+            reg_email.setError("Field cannot be empty");
+            return false;
+
+        } else {
+            reg_email.setError(null);
+            reg_email.setErrorEnabled(false);
+            return true;
+        }
+
+
+    }
 }
 

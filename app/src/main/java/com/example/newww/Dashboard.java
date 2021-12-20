@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +22,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -90,7 +81,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         logo_xocdia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent xocdia = new Intent(getApplication(),Xocdia.class);
+                Intent xocdia = new Intent(getApplication(), JackPot.class);
                 startActivity(xocdia);
             }
         });
@@ -191,6 +182,10 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         tv_email.setText(email);
         Glide.with(this).load(photoUrl).error(R.drawable.iconman).into(img_avatar);
     }
+
+
+
+
 
 
 

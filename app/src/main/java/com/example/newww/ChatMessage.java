@@ -13,6 +13,7 @@ public class ChatMessage {
 
 
     public String getMessage_context() {
+
         return message_context;
     }
 
@@ -24,6 +25,7 @@ public class ChatMessage {
     }
 
     public ChatMessage(String message_context) {
+
         this.message_context = message_context;
     }
 

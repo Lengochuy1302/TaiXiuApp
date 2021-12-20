@@ -76,7 +76,7 @@ public class BigAndSmall extends AppCompatActivity {
             public void onClick(View v) {
                 betsmall.setEnabled(false);
                 betbig.setEnabled(true);
-
+                betbig.setText("");
 
 
             }
@@ -87,6 +87,7 @@ public class BigAndSmall extends AppCompatActivity {
             public void onClick(View v) {
                 betbig.setEnabled(false);
                 betsmall.setEnabled(true);
+                betsmall.setText("");
 
             }
         });
@@ -218,17 +219,21 @@ public class BigAndSmall extends AppCompatActivity {
 
 
     public void datcuoctai() {
-        String big = betbig.getText().toString();
+        DecimalFormat formatmoney = new DecimalFormat("###,###,###");
+        String big = betbig.getText().toString().trim();
         int giatribig = new Integer(big).intValue();
         mo.SCORE =  mo.SCORE + giatribig;
-        moneyy.setText( mo.SCORE + " Vnd");
+        String tien = String.valueOf(formatmoney.format(mo.SCORE));
+        moneyy.setText( tien + " Vnd");
 
     }
     private void datcuocxiu() {
-        String small = betsmall.getText().toString();
-        int giatrixiu = new Integer(small).intValue();
-        mo.SCORE =  mo.SCORE + giatrixiu;
-        moneyy.setText(mo.SCORE + " Vnd");
+        DecimalFormat formatmoney = new DecimalFormat("###,###,###");
+        String big = betbig.getText().toString();
+        int giatrixiu = new Integer(big).intValue();
+        mo.SCORE =  mo.SCORE - giatrixiu;
+        String tien = String.valueOf(formatmoney.format(mo.SCORE));
+        moneyy.setText(tien + " Vnd");
 
     }
 
@@ -238,6 +243,7 @@ public class BigAndSmall extends AppCompatActivity {
            datcuoctai();
             Toast.makeText(this, "Tài", Toast.LENGTH_SHORT).show();
         } else if (sum <= 10) {
+            Toast.makeText(this, "Xỉu", Toast.LENGTH_SHORT).show();
             datcuocxiu();
         }
 

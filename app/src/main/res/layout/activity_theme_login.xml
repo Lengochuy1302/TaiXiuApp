@@ -7,6 +7,7 @@
     android:background="#FAFAFA"
     android:orientation="vertical"
     android:padding="10dp"
+    android:id="@+id/ll_main"
     tools:context=".ThemeLogin">
 
     <ImageView
@@ -114,6 +115,7 @@
             />
 
         <Button
+            android:id="@+id/forgotpassword"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

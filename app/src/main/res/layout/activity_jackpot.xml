@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JackPot">
+
+    <TextView
+        android:id="@+id/txt_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_text"
+        android:padding="20dp"
+        android:text="500000"
+        android:textStyle="bold"
+        android:textColor="@android:color/white" />
+
+    <FrameLayout
+        android:id="@+id/frame_bar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.example.newww.ImageViewScrolling.ImageViewScrolling
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.example.newww.ImageViewScrolling.ImageViewScrolling
+                android:id="@+id/image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.example.newww.ImageViewScrolling.ImageViewScrolling
+                android:id="@+id/image3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/btn_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="51dp"
+        android:layout_toEndOf="@+id/frame_bar"
+        android:src="@drawable/up"/>
+
+    <ImageView
+        android:id="@+id/btn_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="79dp"
+        android:layout_toEndOf="@+id/frame_bar"
+        android:src="@drawable/down"
+        android:layout_toRightOf="@+id/frame_bar"
+        android:visibility="gone"
+        />
+
+
+
+</RelativeLayout>
